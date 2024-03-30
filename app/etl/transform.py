@@ -18,10 +18,10 @@ def transforma_em_um_unico(all_data: List[DataFrame]) -> DataFrame:
         ValueError: Se a lista `all_data` estiver vazia ou contiver elementos que não são DataFrames.
     """
     if not all_data:
-        raise ValueError('No data to transform')
+        raise ValueError("No data to transform")
 
     if not all(isinstance(item, DataFrame) for item in all_data):
-        raise ValueError('All elements in the list must be pandas DataFrames')
+        raise ValueError("All elements in the list must be pandas DataFrames")
 
     consolidated_df = pd.concat(all_data, axis=0, ignore_index=True)
     return consolidated_df
