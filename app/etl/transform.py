@@ -1,3 +1,5 @@
+"""modulo com todas as transformações necessárias para consolidar os dados de entrada."""
+
 from typing import List
 
 import pandas as pd

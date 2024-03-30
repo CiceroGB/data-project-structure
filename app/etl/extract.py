@@ -1,3 +1,5 @@
+"""modulo de extract necessárias para consolidar os dados de entrada."""
+
 import glob
 import os
 from typing import List

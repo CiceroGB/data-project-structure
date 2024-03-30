@@ -1,3 +1,5 @@
+"""modulo para obter os dados dos arquivos."""
+
 import os
 
 import pandas as pd
