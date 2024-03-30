@@ -26,8 +26,3 @@ O projeto em unificar planilhas xlsx em uma única.
 ### ::: app.etl.transform
 
 ### ::: app.etl.pipeline
-
-
-
-
-
