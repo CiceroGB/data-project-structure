@@ -1,39 +1,19 @@
-import os
-import pandas as pd
+"""modulo de extract necessárias para consolidar os dados de entrada."""
+
 import glob
+import os
+
+import pandas as pd
 
 
-def extract_excel(input_folder: str) -> pd.DataFrame:
+def extract_excel(input_folder):
     """
-    Extrai dados de todos os arquivos Excel em uma pasta especificada.
+    função para extrair dados de arquivos Excel.
 
-    Args:
-        input_folder (str): Caminho da pasta contendo os arquivos Excel.
-
-    Returns:
-        pd.DataFrame: DataFrame consolidado com dados de todos os arquivos Excel.
-
-    Raises:
-        ValueError: Se nenhum arquivo Excel for encontrado na pasta.
-        Exception: Para erros ocorridos durante a leitura dos arquivos Excel.
+    type: input_folder: str
     """
     files = glob.glob(os.path.join(input_folder, "*.xlsx"))
     if not files:
         raise ValueError("No Excel files found in the specified folder")
-
-    all_data = []
-    for file in files:
-        try:
-            data = pd.read_excel(file)
-            all_data.append(data)
-        except Exception as e:
-            raise Exception(f"Error reading {file}: {e}")
-
-    if not all_data:
-        return pd.DataFrame()
-
-    return pd.concat(all_data, ignore_index=True)   
-   
-    
-
-
+    all_data = [pd.read_excel(file) for file in files]
+    return all_data
