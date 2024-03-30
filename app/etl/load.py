@@ -1,7 +1,11 @@
 import os
+
 import pandas as pd
 
-def load_em_um_novo_excel(df: pd.DataFrame, output_folder: str, output_file_name: str) -> None:
+
+def load_em_um_novo_excel(
+    df: pd.DataFrame, output_folder: str, output_file_name: str
+) -> None:
     """
     Salva um DataFrame em um arquivo Excel no diretório especificado.
 
@@ -18,4 +22,6 @@ def load_em_um_novo_excel(df: pd.DataFrame, output_folder: str, output_file_name
 
     # Salva o DataFrame em um arquivo Excel no caminho especificado
     file_path = os.path.join(output_folder, output_file_name)
-    df.to_excel(file_path, index=False)  # O parâmetro index=False remove o índice do DataFrame no arquivo Excel
+    df.to_excel(
+        file_path, index=False
+    )  # O parâmetro index=False remove o índice do DataFrame no arquivo Excel

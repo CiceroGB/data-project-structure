@@ -1,11 +1,15 @@
 from typing import Any
+
 import pandas as pd
 
 from .extract import extract_excel
 from .load import load_em_um_novo_excel
 from .transform import transforma_em_um_unico
 
-def pipeline_completa(input_folder: str, output_folder: str, output_file_name: str) -> None:
+
+def pipeline_completa(
+    input_folder: str, output_folder: str, output_file_name: str
+) -> None:
     """
     Executa um processo ETL completo, que extrai dados de arquivos Excel em uma pasta,
     transforma esses dados consolidando-os em um único DataFrame, e carrega esse DataFrame
